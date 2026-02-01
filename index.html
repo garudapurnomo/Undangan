@@ -2,83 +2,22 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Selamat Hari Valentine💍</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player Grid - Undangan Pernikahan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); overflow-x: hidden; position: relative; }
-        
-        /* Parallax Hero */
-        .hero { 
-            min-height: 100vh; 
-            background: url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover fixed; 
-            position: relative; 
-            display: flex; align-items: center; justify-content: center; color: white; text-align: center; 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fad0c4 100%); 
+            min-height: 100vh; padding: 40px 20px; 
         }
-        .hero::before { 
-            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; 
-            background: linear-gradient(rgba(0,0,0,.4), rgba(255,193,7,.1)); /* Gold tint */
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { 
+            font-family: 'Dancing Script', cursive; font-size: 3.5em; 
+            text-align: center; color: #fff; text-shadow: 2px 2px 10px rgba(0,0,0,0.3); 
+            margin-bottom: 50px; animation: fadeInUp 1s ease; 
         }
-        .hero-content { position: relative; z-index: 2; }
-
-        /* Shimmer Nama */
-        .nama { 
-            font-family: 'Sacramento', cursive; font-size: 4rem; color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,.5);
-            background: linear-gradient(45deg, #fff, #ffd700, #ff69b4, #fff); background-size: 400% 400%;
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-            animation: shimmer 3s ease-in-out infinite;
-        }
-        @keyframes shimmer { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
-
-        .date { font-size: 1.5rem; margin: 20px 0; animation: fadeInUp 1.5s ease-out; }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-
-        .countdown { 
-            background: rgba(255,255,255,.2); backdrop-filter: blur(10px); padding: 20px; border-radius: 20px;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-        .countdown-item { font-size: 2rem; font-weight: 600; color: #ffd700; }
-
-        /* Hujan Bunga/Hati Romantis */
-        .particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
-        .particle {
-            position: absolute; font-size: 20px; opacity: .7; animation: floatFall linear infinite;
-        }
-        @keyframes floatFall {
-            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
-        }
-
-        section { padding: 80px 0; }
-        .cerita { background: #fff; }
-        .pasangan { text-align: center; }
-        .pasangan img { 
-            width: 250px; height: 250px; object-fit: cover; border-radius: 50%; 
-            border: 8px solid #f8f9fa; transition: all .4s ease; box-shadow: 0 10px 30px rgba(0,0,0,.2);
-        }
-        .pasangan img:hover { transform: scale(1.1) rotate(5deg); box-shadow: 0 20px 40px rgba(255,215,0,.4); }
-        .lokasi iframe { border-radius: 20px; border: 0; transition: transform .3s; }
-        .lokasi iframe:hover { transform: scale(1.02); }
-        .rsvp-form { background: #f8f9fa; border-radius: 20px; padding: 40px; max-width: 500px; margin: 0 auto; }
-        .galeri { background: #f8f9fa; }
-        .galeri img { 
-            border-radius: 15px; transition: all .4s; cursor: pointer; 
-            filter: grayscale(40%); box-shadow: 0 10px 20px rgba(0,0,0,.1);
-        }
-        .galeri img:hover { 
-            transform: scale(1.05) rotate(2deg); filter: grayscale(0%); box-shadow: 0 20px 40px rgba(255,215,0,.3);
-        }
-        footer { background: #333; color: white; text-align: center; padding: 20px; }
-
-        @media (max-width: 768px) { 
-            .nama { font-size: 2.5rem; } .countdown-item { font-size: 1.5rem; } 
-            .hero { background-attachment: scroll; } /* Parallax off mobile */
-        }
-
         .music-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
@@ -149,136 +88,15 @@
     </style>
 </head>
 <body>
-    <!-- Particles Animasi -->
-    <div class="particles" id="particles"></div>
-
-    <!-- Hero Parallax -->
-    <section class="hero" data-aos="fade-down">
-        <div class="hero-content">
-            <h1 class="nama">Dinda Aryanti</h1>
-            <p class="date">Selamat Hari Valentine</p>
-            <div class="countdown" id="countdown">
-                <div class="row g-2">
-                    <div class="col"><div class="countdown-item" id="days">00</div><small>Hari</small></div>
-                    <div class="col"><div class="countdown-item" id="hours">00</div><small>Jam</small></div>
-                    <div class="col"><div class="countdown-item" id="minutes">00</div><small>Menit</small></div>
-                    <div class="col"><div class="countdown-item" id="seconds">00</div><small>Detik</small></div>
-                </div>
-            </div>
-            <p class="mt-4 fs-5">14 Februari 2026 | 10:00 WIB<br></p>
-        </div>
-    </section>
-
-    <!-- Sisanya sama seperti sebelumnya -->
-    <section class="cerita" data-aos="fade-up">
-        <div class="container">
-            <h2 class="text-center mb-5">Yang Di Semogakan</h2>
-            <p class="text-center lead">Terima Kasih Sayang sudah buka pesan ini, Terima kasih banyak sudah bisa nerima kekurangan aku sammpe hari ini, bisa menjadi pendengar yang baik, bisa menjadi tepat ternyaman dan membuat aku tenang, Semoga apa yang kita jalankan saat ini dan kita usahakan saat ini bisa terkabulkan dengan doa doa, maaf juga ya aku sekarang bisa mencintai kamu dan nunjukin ke kamu hanya bisa lewat doa, akuu sayang bangett sama kamu dan aku cinta bangett sama kau</p>
-            <h2 class="text-center mb-5">I Lovee Moree 💖🌸💘</h2>
-          </div>
-    </section>
-
-    <section class="pasangan py-5" data-aos="zoom-in">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6"><img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=300&h=300&fit=crop&crop=face" alt="Mempelai Pria" class="img-fluid mx-auto d-block mb-4"><h3>Andi Santoso</h3><p>Putra dari Bapak Ahmad & Ibu Siti</p></div>
-                <div class="col-md-6"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&h=300&fit=crop&crop=face" alt="Mempelai Wanita" class="img-fluid mx-auto d-block mb-4"><h3>Budi Hartati</h3><p>Putri dari Bapak Joko & Ibu Sari</p></div>
-            </div>
-        </div>
-    </section>
-    <section class="galeri py-5" data-aos="fade-up">
-        <div class="container">
-        <h1 class="text-center mb-5">💕 Playlist Favorit 💕</h1>
+    <div class="container">
+        <h1>💕 Playlist Pernikahan 💕</h1>
         <div class="music-grid" id="musicGrid"></div>
-        <audio id="audio" preload="auto"></audio>
-    <div id="nowPlaying" class="now-playing" style="display: none;">Now Playing: --</div>
     </div>
 
     <audio id="audio" preload="auto"></audio>
     <div id="nowPlaying" class="now-playing" style="display: none;">Now Playing: --</div>
-    </section>
-    <section class="rsvp py-5" data-aos="fade-up">
-        <div class="container">
-            <h2 class="text-center mb-5">Tinggalkan pesan & harapan</h2>
-            <form class="rsvp-form">
-                <div class="mb-3">
-                </div>
-                <button type="submit" class="btn btn-warning btn-lg w-100 text-white"><a href="https://wa.me/6287777590272">Kirim</a> 💌</button>
-            </form>
-        </div>
-    </section>
 
-    <section class="galeri py-5" data-aos="fade-up">
-        <div class="container">
-            <h2 class="text-center mb-5">Galeri Prewedding</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4"><img src="/asset/img/1.JPG" class="img-fluid w-100" alt="Foto 1"></div>
-                <div class="col-md-4 mb-4"><img src="/asset/img/4.JPG" class="img-fluid w-100" alt="Foto 2"></div>
-                <div class="col-md-4 mb-4"><img src="/asset/img/3.JPG" class="img-fluid w-100" alt="Foto 3"></div>
-                <div class="col-md-4 mb-4"><img src="/asset/img/3.JPG" class="img-fluid w-100" alt="Foto 3"></div>
-                <div class="col-md-4 mb-4"><img src="/asset//img/3.JPG" class="img-fluid w-100" alt="Foto 3"></div>
-                <div class="col-md-4 mb-4"><img src="/asset/img/3.JPG" class="img-fluid w-100" alt="Foto 3"></div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-4" data-aos="fade-up">
-        <p class="mb-0">&copy; 2026 NAWI. Dibuat dengan 💖 untuk hari bahagia</p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script>
-        AOS.init({ duration: 1200, once: true });
-
-        // Countdown (sama)
-        const weddingDate = new Date('2026-02-14T10:00:00').getTime();
-        const countdown = setInterval(() => {
-            const now = new Date().getTime();
-            const distance = weddingDate - now;
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-            if (distance < 0) { clearInterval(countdown); document.getElementById('countdown').innerHTML = '<h3>Selamat! Pernikahan telah berlangsung 💒</h3>'; }
-        }, 1000);
-
-        // RSVP Confetti
-        document.querySelector('.rsvp-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 } });
-            alert('Terima kasih atas konfirmasinya! Kami tunggu kehadirannya 💕');
-        });
-
-        // Galeri Lightbox (sama)
-        document.querySelectorAll('.galeri img').forEach(img => {
-            img.addEventListener('click', () => {
-                const modal = document.createElement('div');
-                modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.9);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
-                modal.innerHTML = `<img src="${img.src}" style="max-width:90%;max-height:90%;border-radius:10px;"><span style="position:absolute;top:20px;right:30px;color:white;font-size:40px;cursor:pointer;font-weight:bold;" onclick="this.parentElement.remove()">&times;</span>`;
-                document.body.appendChild(modal);
-            });
-        });
-
-        // Animasi Particles Hati/Bunga Jatuh (Baru!)
-        const particles = document.getElementById('particles');
-        const emojis = ['🌸', '🌹', '💕', '💖', '✨', '💍'];
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-            particle.className = 'particle';
-            particle.style.left = Math.random() * 100 + 'vw';
-            particle.style.animationDuration = (8 + Math.random() * 8) + 's';
-            particle.style.animationDelay = Math.random() * 2 + 's';
-            particles.appendChild(particle);
-            setTimeout(() => particle.remove(), 20000);
-        }
-        setInterval(createParticle, 300); // 3 partikel/detik
         const audio = document.getElementById('audio');
         const musicGrid = document.getElementById('musicGrid');
         const nowPlaying = document.getElementById('nowPlaying');
@@ -286,20 +104,35 @@
         // Playlist data (ganti MP3/cover sesuai kebutuhan)
         const playlist = [
             { 
-                title: 'Jatuh Suka', artist: 'Tulus', 
-                cover: '/asset/img/3.JPG', 
-                src: '/asset/song/1.mp3' 
+                title: 'Wedding March', artist: 'Mendelssohn', 
+                cover: 'https://via.placeholder.com/120/ff9a9e/fff?text=WM', 
+                src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3' 
             },
             { 
-                title: 'Akad', artist: 'Payung Teduh', 
-                cover: '/asset/img/3.JPG', 
-                src: '/asset/song/2.mp3' 
+                title: 'Canon in D', artist: 'Pachelbel', 
+                cover: 'https://via.placeholder.com/120/fecfef/fff?text=Canon', 
+                src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3' 
             },
             { 
-                title: 'Jatuh Suka', artist: 'Tulus', 
-                cover: '/asset/img/3.JPG', 
-                src: '/asset/song/1.mp3' 
+                title: 'Ave Maria', artist: 'Schubert', 
+                cover: 'https://via.placeholder.com/120/ff69b4/fff?text=Ave', 
+                src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3' 
             },
+            { 
+                title: 'Romantic Waltz', artist: 'Traditional', 
+                cover: 'https://via.placeholder.com/120/fad0c4/fff?text=Waltz', 
+                src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3' 
+            },
+            { 
+                title: 'Piano Love', artist: 'Ashamaluev', 
+                cover: 'https://via.placeholder.com/120/ff9a9e/fff?text=Piano', 
+                src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3' 
+            },
+            { 
+                title: 'Eternal Love', artist: 'Royalty Free', 
+                cover: 'https://via.placeholder.com/120/fecfef/fff?text=Eternal', 
+                src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3' 
+            }
         ];
 
         let currentSong = null;
